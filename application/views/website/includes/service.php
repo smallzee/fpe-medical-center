@@ -9,7 +9,7 @@
                 <div class="text-content">
                     <h3><?= (!empty($section['timetable']['title'])?$section['timetable']['title']:null)?></h3>
                     <p><?= (!empty($section['timetable']['description'])?$section['timetable']['description']:null)?></p>
-                    <a href="<?= base_url('doctors/timetable')?>" class="btn btn-link"><?= display('view').' '.display('timetable')?><i class="ti-arrow-right"></i></a>
+<!--                    <a href="--><?//= base_url('doctors/timetable')?><!--" class="btn btn-link">--><?//= display('view').' '.display('timetable')?><!--<i class="ti-arrow-right"></i></a>-->
                 </div>
             </div>
             <!-- Benefits -->

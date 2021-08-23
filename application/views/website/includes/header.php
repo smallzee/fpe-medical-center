@@ -46,7 +46,7 @@ $settings = $this->db->select("language")->get('setting')->row();
                 <div class="col-md-4 col-lg-3 col-xl-4">
                     <div class="d-flex align-items-center logo-wrap">
                         <div class="main-logo">
-                            <a href="<?= base_url()?>" class="headerLogo"><img src="<?= (!empty($basics->logo)?base_url($basics->logo):base_url('assets_web/img/placeholder/logo.png'))?>" alt=""></a>
+                            <a href="<?= base_url()?>" class="headerLogo"><img src="<?= base_url('assets/images/logo.png')?>" style="width: 50px;height: 50px;" alt=""></a>
                         </div>
                         <div class="order-md-first sidebar-toggle-btn">
                             <button type="button" id="sidebarCollapse" class="btn">
@@ -66,13 +66,13 @@ $settings = $this->db->select("language")->get('setting')->row();
                                 <?php endif ?>
                             </div>
                         </div>
-<!--                        <div class="media helpInfo">-->
-<!--                            <div class="icon"><i class="icon-mobile"></i></div>-->
-<!--                            <div class="media-body">-->
-<!--                                <h6 class="mb-0">--><?//= $phone[1];?><!--</h6>-->
-<!--                                <p class="subText">--><?//= display('contact_us_for_help')?><!--</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
+                        <div class="media helpInfo">
+                            <div class="icon"><i class="icon-mobile"></i></div>
+                            <div class="media-body">
+                                <h6 class="mb-0"><?= $phone[1];?></h6>
+                                <p class="subText"><?= display('contact_us_for_help')?></p>
+                            </div>
+                        </div>
 <!--                        <div class="media helpInfo">-->
 <!--                            <div class="icon"><i class="icon-map-pin "></i></div>-->
 <!--                            <div class="media-body">-->
@@ -95,57 +95,86 @@ $settings = $this->db->select("language")->get('setting')->row();
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav mr-auto">
 
+                    <li class="nav-item  ">
+
+                        <a class="nav-link" href="<?= base_url('home') ?>">Home</a>
+
+                        <!-- Sub Menu -->
+                    </li>
+
+                    <li class="nav-item  ">
+
+                        <a class="nav-link" href="<?= base_url('about') ?>">About Us</a>
+
+                        <!-- Sub Menu -->
+                    </li>
+
+
+                    <li class="nav-item  ">
+
+                        <a class="nav-link" href="http://projects.io/web/medical-center/contact">Contact Us</a>
+
+                        <!-- Sub Menu -->
+                    </li>
+                    <li class="nav-item  ">
+
+                        <a class="nav-link" href="<?=base_url('patient_login')?>">Patient Login</a>
+
+                        <!-- Sub Menu -->
+                    </li>
+
+
                     <!-- Parent menu -->
-                    <?php if(!empty($parent_menu)){ ?>
-                        <?php foreach ($parent_menu as $parent) {
-                            //print_r($parent);
-                         ?>
-                            <li class="nav-item <?php if(!empty($parent->sub)){ echo "dropdown";}?> <?php echo (($this->uri->segment(1)==$parent->url)?"active":null)?>">
-
-                                <?php if(!empty($parent->sub)){?>
-                                        <a class="nav-link dropdown-toggle" href="" id="pages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                          <?= $parent->title?>
-                                         </a>
-                                 <?php }else{?>
-                                    <?php if($parent->url=="page"){ ?>
-                                         <a class="nav-link" href="<?= base_url($parent->url.'/'.$parent->content_id)?>"><?= $parent->title?></a>
-                                    <?php }else{?>
-                                        <a class="nav-link" href="<?= base_url($parent->url)?>"><?= $parent->title?></a>
-                                    <?php }?>
-                                <?php }?>
-
-                                <!-- Sub Menu -->
-                                 <?php if(!empty($parent->sub)){ ?>
-                                      <ul class="dropdown-menu" aria-labelledby="pages">
-                                        <?php  foreach ($parent->sub as $sub) {
-                                            //$sub->content_id
-                                            ?>
-                                            <li>
-
-                                                <?php if(!empty($sub->sub)){?>
-                                                    <a class="dropdown-item <?php if(!empty($sub->sub)){ echo "dropdown-toggle";}?>" href=""><?= $sub->title?></a>
-                                                <?php }else{?>
-                                                    <?php if($sub->url=="page"){ ?>
-                                                        <a class="dropdown-item" href="<?= base_url($sub->url.'/'.$sub->content_id)?>"><?= $sub->title?></a>
-                                                    <?php }else{?>
-                                                        <a class="dropdown-item" href="<?= base_url($sub->url)?>"><?= $sub->title?></a>
-                                                    <?php }?>
-                                                <?php }?>
-
-                                                    <!-- Sub Sub Menu -->
-                                                     <?php if(!empty($sub->sub)){ ?>
-                                                        <ul class="dropdown-menu">
-                                                            <?php  foreach ($sub->sub as $subs) {?>
-                                                              <li><a class="dropdown-item" href="<?=  base_url($subs->url.'/'.$subs->content_id)?>"><?= $subs->title?></a></li>
-                                                            <?php }?>
-                                                        </ul>
-                                                      <?php }?>
-                                          <?php }?>
-                                        </ul>
-                                  <?php }?>
-                            </li>
-                        <?php }?>
-                    <?php }?>
+<!--                    --><?php //if(!empty($parent_menu)){ ?>
+<!--                        --><?php //foreach ($parent_menu as $parent) {
+//                            //print_r($parent);
+//                         ?>
+<!--                            <li class="nav-item --><?php //if(!empty($parent->sub)){ echo "dropdown";}?><!-- --><?php //echo (($this->uri->segment(1)==$parent->url)?"active":null)?><!--">-->
+<!---->
+<!--                                --><?php //if(!empty($parent->sub)){?>
+<!--                                        <a class="nav-link dropdown-toggle" href="" id="pages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--                                          --><?//= $parent->title?>
+<!--                                         </a>-->
+<!--                                 --><?php //}else{?>
+<!--                                    --><?php //if($parent->url=="page"){ ?>
+<!--                                         <a class="nav-link" href="--><?//= base_url($parent->url.'/'.$parent->content_id)?><!--">--><?//= $parent->title?><!--</a>-->
+<!--                                    --><?php //}else{?>
+<!--                                        <a class="nav-link" href="--><?//= base_url($parent->url)?><!--">--><?//= $parent->title?><!--</a>-->
+<!--                                    --><?php //}?>
+<!--                                --><?php //}?>
+<!---->
+<!--                                 Sub Menu -->
+<!--                                 --><?php //if(!empty($parent->sub)){ ?>
+<!--                                      <ul class="dropdown-menu" aria-labelledby="pages">-->
+<!--                                        --><?php // foreach ($parent->sub as $sub) {
+//                                            //$sub->content_id
+//                                            ?>
+<!--                                            <li>-->
+<!---->
+<!--                                                --><?php //if(!empty($sub->sub)){?>
+<!--                                                    <a class="dropdown-item --><?php //if(!empty($sub->sub)){ echo "dropdown-toggle";}?><!--" href="">--><?//= $sub->title?><!--</a>-->
+<!--                                                --><?php //}else{?>
+<!--                                                    --><?php //if($sub->url=="page"){ ?>
+<!--                                                        <a class="dropdown-item" href="--><?//= base_url($sub->url.'/'.$sub->content_id)?><!--">--><?//= $sub->title?><!--</a>-->
+<!--                                                    --><?php //}else{?>
+<!--                                                        <a class="dropdown-item" href="--><?//= base_url($sub->url)?><!--">--><?//= $sub->title?><!--</a>-->
+<!--                                                    --><?php //}?>
+<!--                                                --><?php //}?>
+<!---->
+<!--                                                     Sub Sub Menu -->
+<!--                                                     --><?php //if(!empty($sub->sub)){ ?>
+<!--                                                        <ul class="dropdown-menu">-->
+<!--                                                            --><?php // foreach ($sub->sub as $subs) {?>
+<!--                                                              <li><a class="dropdown-item" href="--><?//=  base_url($subs->url.'/'.$subs->content_id)?><!--">--><?//= $subs->title?><!--</a></li>-->
+<!--                                                            --><?php //}?>
+<!--                                                        </ul>-->
+<!--                                                      --><?php //}?>
+<!--                                          --><?php //}?>
+<!--                                        </ul>-->
+<!--                                  --><?php //}?>
+<!--                            </li>-->
+<!--                        --><?php //}?>
+<!--                    --><?php //}?>
                 </ul>
 <!--                <ul class="navbar-nav ml-auto">-->
 <!--                    <li class="nav-item nav-btn">-->

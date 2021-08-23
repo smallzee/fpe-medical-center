@@ -41,15 +41,15 @@
                 <input type="checkbox" name="chkuserpss" class="custom-control-input" id="customCheck1">
                 <label class="custom-control-label" for="customCheck1"><?= display('remember_me_next_time')?> </label>
             </div>
-            <div class="form-group">
-                 <?php echo form_dropdown('userLang',$languageList, $this->input->cookie('Lng', true),'class="form-control basic-single" id="userLang"') ?> 
-            </div>
+<!--            <div class="form-group">-->
+<!--                 --><?php //echo form_dropdown('userLang',$languageList, $this->input->cookie('Lng', true),'class="form-control basic-single" id="userLang"') ?><!-- -->
+<!--            </div>-->
 
-            <button type="submit" class="btn btn-primary btn-block"><?= display('sign_in')?></button>
+            <button type="submit" class="btn btn-danger btn-block"><?= display('sign_in')?></button>
         </form>
     </div>
 </div>
-<div class="bottom-text">
-    <?= display('do_not_have_an_account')?> <a href="<?= base_url('registration')?>"><?= display('sign_up')?></a><br>
-    <?= display('remind')?> <a href="<?php echo base_url('forgot_password');?>"><?= display('password')?></a>
-</div>
+<!--<div class="bottom-text">-->
+<!--    --><?//= display('do_not_have_an_account')?><!-- <a href="--><?//= base_url('registration')?><!--">--><?//= display('sign_up')?><!--</a><br>-->
+<!--    --><?//= display('remind')?><!-- <a href="--><?php //echo base_url('forgot_password');?><!--">--><?//= display('password')?><!--</a>-->
+<!--</div>-->

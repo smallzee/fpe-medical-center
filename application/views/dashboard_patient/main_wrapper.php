@@ -57,7 +57,7 @@ $settings = $this->db->select("site_align")
         <!-- Site wrapper -->
         <div class="wrapper">
             <header class="main-header"> 
-                <?php $logo = $this->session->userdata('logo'); ?>
+<!--                --><?php //$logo = $this->session->userdata('logo'); ?>
                 <a href="<?php echo base_url('dashboard_patient/home') ?>" class="logo"> <!-- Logo -->
                     <span class="logo-mini">
                         <img src="<?php echo (!empty($logo)?base_url($logo):base_url("assets/images/logo.png")) ?>" alt="">

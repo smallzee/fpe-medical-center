@@ -113,7 +113,7 @@ $settings = $this->db->select("site_align")
                     <div class="user-panel text-center">
 <!--                        --><?php //$picture = $this->session->userdata('picture'); ?>
                         <div class="image">
-                            <img src="<?php echo (!empty($picture)?base_url($picture):base_url("assets/img/placeholder/profile.png")) ?>" class="img-circle" alt="User Image">
+                            <img src="<?php echo (!empty($picture)?base_url($picture):base_url("assets/images/icon.jpeg")) ?>" class="img-circle" alt="User Image">
                         </div>
                         <div class="info">
                             <p><?php echo $this->session->userdata('fullname') ?></p>

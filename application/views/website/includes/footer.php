@@ -2,10 +2,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                
+
                 <div class="footer-des">
                     <h3 class="footer-title"><?= display('about_us')?></h3>
-                    <!--<img src="assets/img/logo.png" class="img-responsive footer-logo" alt="">-->
+                    <img src="<?= base_url('assets/images/logo.png') ?>" style="width: 80px; height: 80px;" class="img-responsive footer-logo" alt="">
                     <p class="des">
                         <?= (!empty($about[0]->description)?character_limiter(strip_tags($about[0]->description), 200):null)?>
                     </p>
@@ -13,7 +13,7 @@
                         <a href="<?= base_url('contact')?>" class="btn btn-link"><?= display('contact_us')?><i class="ti-arrow-right"></i></a>
                     </div>
                 </div>
-               
+
             </div>
             <div class="col-md-9">
                 <div class="row">
@@ -34,12 +34,16 @@
                             <h3 class="footer-title"><?= display('quick_links')?></h3>
                             <ul class="footer-link list-unstyled quickLink">
 
-                                <?php if(!empty($parent_menu)){ ?>
-                                    <?php foreach ($parent_menu as $menu) { ?>
-                                         <li><a href="<?= base_url($menu->url)?>"><?= $menu->title?></a></li>
-                                    <?php }?>
-                                <?php }?>
+<!--                                --><?php //if(!empty($parent_menu)){ ?>
+<!--                                    --><?php //foreach ($parent_menu as $menu) { ?>
+<!--                                         <li><a href="--><?//= base_url($menu->url)?><!--">--><?//= $menu->title?><!--</a></li>-->
+<!--                                    --><?php //}?>
+<!--                                --><?php //}?>
 
+                                <li><a href="<?= base_url('home') ?>">Home</a></li>
+                                <li><a href="<?= base_url('about') ?>">About Us</a></li>
+                                <li><a href="<?= base_url('contact') ?>">Contact Us</a></li>
+                                <li><a href="<?= base_url('patient_login') ?>">Patient Login</a></li>
                             </ul>
                         </div>
                     </div>
@@ -50,7 +54,7 @@
                            $email = explode(",",$basics->email);
                             ?>
                         <div class="addressLink">
-                            <p><?= (!empty($setting->address)?$setting->address:null)?></p>
+<!--                            <p>--><?//= (!empty($setting->address)?$setting->address:null)?><!--</p>-->
                             <ul class="list-unstyled">
                                 <li><i class="ti-mobile"></i> <?= display('phone')?>: <a href="<?= display('phone')?>:<?= $phone[0];?>"><?= $phone[0];?></a></li>
 <!--                                <li><i class="icon-mobile"></i> --><?//= display('text')?><!--: <a href="--><?//= (!empty($setting->text)?$setting->text:null)?><!--"> --><?//= (!empty($setting->text)?$setting->text:null)?><!--</a></li>-->
@@ -73,7 +77,8 @@
         <div class="row">
             <div class="col-md-7">
                 <div class="coptText">
-                    <?= (!empty($setting->copyright_text)?$setting->copyright_text:null);?>
+<!--                    --><?//= (!empty($setting->copyright_text)?$setting->copyright_text:null);?>
+                    Copyright &copy; 2021 The Federal Polytechnic Ede
                 </div>
             </div>
         </div>

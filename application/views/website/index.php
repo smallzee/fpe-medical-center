@@ -8,9 +8,9 @@
         <meta name="keyword" content="<?= (!empty($setting->meta_keyword)?$setting->meta_keyword:null) ?>" />
         <meta name="description" content="<?= (!empty($setting->meta_tag)?$setting->meta_tag:null) ?>" />
         <!-- Favicon -->
-        <link rel="shortcut icon" href="<?= (!empty($basics->favicon)?base_url($basics->favicon):base_url('assets_web/img/placeholder/favicon.png')) ?>"/>
+        <link rel="shortcut icon" href="<?= base_url('assets/images/logo.png') ?>"/>
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title><?= (!empty($setting->title)?$setting->title:null) ?></title>
+        <title>The Federal Polytechnic Ede Medical Center</title>
 
         <!-- CSS -->
         <link href="<?= base_url('assets_web/vendor/bootstrap/css/bootstrap.min.css')?>" type="text/css" rel="stylesheet" media="all">
@@ -38,15 +38,15 @@
         <?php echo (!empty($content)?$content:null) ?>
         <!-- end main content -->
 
-        <div class="appointment text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2><?= display('make_an_appointment')?> <a href="<?= base_url()?>#appointment-form" class="appointment-link js-scroll-trigger"><?= display('go_there')?> <i class="ti-arrow-right"></i></a></h2>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--        <div class="appointment text-center">-->
+<!--            <div class="container">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-md-12">-->
+<!--                        <h2>--><?//= display('make_an_appointment')?><!-- <a href="--><?//= base_url()?><!--#appointment-form" class="appointment-link js-scroll-trigger">--><?//= display('go_there')?><!-- <i class="ti-arrow-right"></i></a></h2>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
         <!-- /.appointment block -->
 
         <?php @$this->load->view('website/includes/footer');?>

@@ -23,7 +23,7 @@ class Home extends CI_Controller {
     {
         $data['title'] = display('home');
         #-----------Setting-------------# 
-        //$data['setting'] = $this->home_model->setting();
+        $data['setting'] = $this->home_model->setting();
         // redirect if website status is disabled
         if ($data['setting']->status == 0) 
             redirect(base_url('login'));

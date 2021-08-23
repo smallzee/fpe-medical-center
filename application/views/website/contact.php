@@ -1,21 +1,14 @@
-<div class="map-content">
-    <!-- The element that will contain our Google Map. This is used in both the Javascript and CSS above. -->
-    <?php if($basics->map_active==0){ ?>
-      <div id="map"></div>
-    <?php }else{
-        echo $basics->google_map;
-    }?>
-</div>
+
 <div class="contact-content">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-lg-7">
                 <div class="contect-des">
                     <div class="contact-header"> 
-                        <h2>
-                            <span class="superheadline"><?= (!empty($setting->title)?$setting->title:null)?></span>
-                            <span class="headline"><?= (!empty($setting->address)?$setting->address:null)?></span>
-                        </h2>
+<!--                        <h2>-->
+<!--                            <span class="superheadline">--><?//= (!empty($setting->title)?$setting->title:null)?><!--</span>-->
+<!--                            <span class="headline">--><?//= (!empty($setting->address)?$setting->address:null)?><!--</span>-->
+<!--                        </h2>-->
                         <p>
                             <?= (!empty($instruction->short_instruction)?$instruction->short_instruction:null)?>
                         </p>

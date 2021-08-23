@@ -24,7 +24,7 @@
         <div class="wrapper">
             <div class="container-center">
                 <div class="register-logo text-center mb-3">
-                    <img src="<?= (!empty($setting->logo)?base_url($setting->logo):base_url('assets_web/img/placeholder/logo.png'))?>" alt="">
+                    <img src="<?= base_url('assets/images/logo.png')?>" alt="">
                 </div>
                 <!-- main contents -->
                 <?php echo $contents;?>
